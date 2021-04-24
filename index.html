@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Religaia: A Text Based RPG!</title>
+</head>
+<body>
+
+    <div class="heading">
+        <h1>Welcome to Religaia</h1>
+        <h3>An old school text-based RPG adventure style game!</h3>
+    </div>
+    <div class="inputbox">
+        <h4>Enter your name to begin your journey through the magical land of Religaia ...</h4>
+        <input type="text" id="name">
+        <button onclick="setName()">Begin!</button>
+    </div>
+
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+        *{
+            color: white;
+            font-family: 'New Tegomin', serif;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 2vw;
+            padding-right: 2vw;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        input{
+            color: black;
+            margin: 2vh;
+        }
+        button{
+            border: 2px solid white;
+            background: black;
+            height: 6vh;
+            width: 18vw;
+            font-size: 2vh;
+
+        }
+        button:hover{
+            border: 2px solid white;
+            background: #111;
+
+        }
+        input{
+            height: 3vh;
+            width: 50vw;
+            font-size: 3vh;
+            text-align: center;
+            padding: 1vh;
+        }
+        h1{
+            font-size: 5vh;
+        }
+        h3{
+            font-size: 3vh;
+        }
+        h4{
+            font-size: 2vh;
+        }
+        .inputbox{
+            margin-top: 30vh;
+        }
+    </style>
+    <script>
+        function setName(){
+            console.log("Welcome!");
+            var username = document.getElementById("name").value;
+            console.log("Setting Name " + username);
+            var player = {
+                name: username,
+            };
+            localStorage.setItem("player", JSON.stringify(player));
+            console.log("Set successfully!")
+        }
+    </script>
+</body>
+</html>
